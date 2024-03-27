@@ -8,7 +8,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
@@ -26,7 +25,7 @@ import static org.minions.demo.BossClientService.FIND_A_BOSS_TASK;
 @SpringBootApplication
 @EnableScheduling
 @EnableDiscoveryClient
-@EnableCircuitBreaker
+//@EnableCircuitBreaker
 public class Application implements CommandLineRunner {
 
     private static final Log log = LogFactory.getLog(Application.class);
@@ -95,7 +94,7 @@ public class Application implements CommandLineRunner {
             List<ServiceInstance> instances = this.discoveryClient.getInstances(service);
             for (ServiceInstance se : instances) {
                 Map<String, String> metadata = se.getMetadata();
-                String type = metadata.get("type");
+                String type = metadata.get("appType");
                 if ("boss".equals(type)) {
 
                     String from = appName + "@" + InetAddress.getLocalHost().getHostName();

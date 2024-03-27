@@ -4,8 +4,6 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -34,7 +32,7 @@ public class BossClientService {
 
         log.info("--- Requesting a task to Boss: " + url);
 
-        return restTemplate.getForObject(url, String.class);
+        return restTemplate.postForObject(url, null,String.class);
     }
 
     private String getFallbackName(String to,
