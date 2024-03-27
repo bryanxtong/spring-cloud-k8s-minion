@@ -49,16 +49,17 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-kubernetes-client</artifactId>
+      <artifactId>spring-cloud-starter-kubernetes-fabric8</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-kubernetes-client-config</artifactId>
+      <artifactId>spring-cloud-starter-kubernetes-fabric8-config</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-kubernetes-client-loadbalancer</artifactId>
+      <artifactId>spring-cloud-starter-kubernetes-fabric8-loadbalancer</artifactId>
     </dependency>
+
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
